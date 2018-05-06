@@ -43,3 +43,24 @@ greendao {
 ```
 
 > 扩展MyApplication,使其支持GreenDao
+
+### 配置adb
++ 打开terminal终端
++ 进入**当前用户**的home目录
++ 创建.bash_profile文件，输入命令：touch .bash_profile
++ 打开.bash_profile文件，命令行输入open -e .bash_profile
++ 编辑.bash_profile文件
+
+```
+ANDROID_HOME=/Users/YourUsername/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
++ 保存并关闭.bash_profile文件
++ 输入并执行命令source .bash_profile
+
+### adb使用
+
++ adb shell
+**疑似android7.0或8.0的模拟器有问题，无法使用su切换到root状态；后下载6.0的模拟器，采用su root即可实现root**
