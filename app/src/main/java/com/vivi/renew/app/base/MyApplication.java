@@ -6,6 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.vivi.renew.app.entity.DaoMaster;
 import com.vivi.renew.app.entity.DaoSession;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.https.HttpsUtils;
+
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 
 /**
  * Created by lvweiwei on 18/5/6.
@@ -28,11 +34,27 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+
+        // 设置全局context
         context = getApplicationContext();
 
+        // 设置全局DaoSession
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this,"renew-db",null);
         SQLiteDatabase db = helper.getWritableDatabase();
         daoSession = new DaoMaster(db).newSession();
+
+        // 初始化OkHttpClient
+
+        // 设置可访问所有的https网站
+        //HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null,null,null);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+                .readTimeout(10000L,TimeUnit.MILLISECONDS)
+                //.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager)
+                .build();
+        OkHttpUtils.initClient(okHttpClient);
+
     }
 
     public static MyApplication getInstance() {

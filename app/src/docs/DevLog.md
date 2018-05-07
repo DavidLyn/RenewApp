@@ -64,3 +64,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 + adb shell
 **疑似android7.0或8.0的模拟器有问题，无法使用su切换到root状态；后下载6.0的模拟器，采用su root即可实现root**
+
+## 20180507
+
+### 增加对OkHttp的支持，采用[okhttp-utils](https://github.com/hongyangAndroid/okhttputils)
++ 在MyApplication中添加初始化OkHttp的代码
