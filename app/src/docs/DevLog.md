@@ -69,3 +69,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ### 增加对OkHttp的支持，采用[okhttp-utils](https://github.com/hongyangAndroid/okhttputils)
 + 在MyApplication中添加初始化OkHttp的代码
+
++ 注意：在做okhttp测试时，服务器地址不能用localhost或127.0.0.1，不然模拟器将其视为自身了
