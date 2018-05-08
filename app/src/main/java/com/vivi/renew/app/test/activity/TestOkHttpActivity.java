@@ -12,6 +12,7 @@ import com.google.gson.reflect.TypeToken;
 import com.vivi.renew.app.R;
 import com.vivi.renew.app.base.CommonResult;
 import com.vivi.renew.app.test.Test;
+import com.vivi.renew.app.utils.LogUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -58,10 +59,13 @@ public class TestOkHttpActivity extends AppCompatActivity implements View.OnClic
 //        String url = "http://192.168.1.105:8080/renew/test";
         String url = "http://192.168.1.105:8080/renew/testObject";
 
-        OkHttpUtils.get().url(url).build().execute(new StringCallback() {
+        OkHttpUtils.get()
+                .url(url)
+                .build()
+                .execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                Log.d("EEEEEEEEEEEEEEEEEError:",e.toString());
+                LogUtil.d("EEEEEEEEEEEEEEEEEError:",e.toString());
             }
 
             @Override
@@ -71,7 +75,7 @@ public class TestOkHttpActivity extends AppCompatActivity implements View.OnClic
                 CommonResult<Test> result = new Gson().fromJson(response,jsonType);
 
                 textView.setText(result.getData().getUserName());
-                Log.d("tag","" + result.getData().getBooks().size());
+                LogUtil.d("tag","" + result.getData().getBooks().size());
             }
         });
     }
