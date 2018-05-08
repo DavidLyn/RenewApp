@@ -78,3 +78,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ### 增加基于范型的CommonResult类
 [如何统一解析JSON数据，使用Gson结合泛型类灵活，让您一劳永逸](https://blog.csdn.net/liu_guizhou/article/details/53366063)
+
+### 在TestOkHttpActivity中增加采用Gson及范型进行CommonResult解析的实例
+
+### 增加日志工具类LogUtil
