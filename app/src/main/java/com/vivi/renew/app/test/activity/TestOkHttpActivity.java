@@ -7,9 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.vivi.renew.app.R;
+import com.vivi.renew.app.base.CommonResult;
+import com.vivi.renew.app.test.Test;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
+
+import java.lang.reflect.Type;
 
 import okhttp3.Call;
 
@@ -49,7 +55,8 @@ public class TestOkHttpActivity extends AppCompatActivity implements View.OnClic
 
     private void request() {
         // 注意：下面不能用localhost或127.0.0.1，不然模拟器将其视为自身了
-        String url = "http://192.168.1.105:8080/renew/test";
+//        String url = "http://192.168.1.105:8080/renew/test";
+        String url = "http://192.168.1.105:8080/renew/testObject";
 
         OkHttpUtils.get().url(url).build().execute(new StringCallback() {
             @Override
@@ -59,8 +66,14 @@ public class TestOkHttpActivity extends AppCompatActivity implements View.OnClic
 
             @Override
             public void onResponse(String response, int id) {
-                textView.setText(response);
+                Type jsonType = new TypeToken<CommonResult<Test>>(){}.getType();
+
+                CommonResult<Test> result = new Gson().fromJson(response,jsonType);
+
+                textView.setText(result.getData().getUserName());
+                Log.d("tag","" + result.getData().getBooks().size());
             }
         });
     }
+
 }

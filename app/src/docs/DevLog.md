@@ -71,3 +71,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 + 在MyApplication中添加初始化OkHttp的代码
 
 + 注意：在做okhttp测试时，服务器地址不能用localhost或127.0.0.1，不然模拟器将其视为自身了
+
+## 20180508
+
+### 增加对Gson的支持
+
+### 增加基于范型的CommonResult类
+[如何统一解析JSON数据，使用Gson结合泛型类灵活，让您一劳永逸](https://blog.csdn.net/liu_guizhou/article/details/53366063)
