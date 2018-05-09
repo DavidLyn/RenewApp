@@ -15,6 +15,18 @@
         android:text="request"/>
 
     <Button
+        android:id="@+id/test_okhttp_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="post"/>
+
+    <Button
+        android:id="@+id/test_okhttp_post_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="post json"/>
+
+    <Button
         android:id="@+id/test_okhttp_return"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

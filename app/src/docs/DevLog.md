@@ -82,3 +82,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ### 在TestOkHttpActivity中增加采用Gson及范型进行CommonResult解析的实例
 
 ### 增加日志工具类LogUtil
+
+## 20180509
+
+### 在TestOkHttpActivity中增加对okhttp-utils的post的测试
+
+### 在TestOkHttpActivity中增加对okhttp-utils的post json的测试
