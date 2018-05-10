@@ -88,3 +88,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ### 在TestOkHttpActivity中增加对okhttp-utils的post的测试
 
 ### 在TestOkHttpActivity中增加对okhttp-utils的post json的测试
+
+## 20180510
+
+### 增加对Glide的支持
+[Glide](https://github.com/bumptech/glide)
+
+**注意：glide4.6.1要求sdk版本为27以上，因此，将内部build.gradle的相关项都改为版本27的**

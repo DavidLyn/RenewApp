@@ -8,19 +8,26 @@ import android.widget.Button;
 
 import com.vivi.renew.app.R;
 import com.vivi.renew.app.base.BaseActivity;
+import com.vivi.renew.app.test.activity.TestGlideActivity;
 import com.vivi.renew.app.test.activity.TestOkHttpActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private Button button1;
+    private Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
 
+        // okHttp test
         button1 = (Button)findViewById(R.id.button_1);
         button1.setOnClickListener(this);
+
+        // glide test
+        button2 = (Button)findViewById(R.id.button_2);
+        button2.setOnClickListener(this);
     }
 
     @Override
@@ -28,6 +35,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         switch (v.getId()) {
             case R.id.button_1: {
                 Intent intent = new Intent(this, TestOkHttpActivity.class);
+                this.startActivity(intent);
+            }
+            case R.id.button_2: {
+                Intent intent = new Intent(this, TestGlideActivity.class);
                 this.startActivity(intent);
             }
 
