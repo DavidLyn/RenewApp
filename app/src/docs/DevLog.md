@@ -93,5 +93,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ### 增加对Glide的支持
 [Glide](https://github.com/bumptech/glide)
+[Glide4使用说明](https://blog.csdn.net/u013320868/article/details/78839875)
 
 **注意：glide4.6.1要求sdk版本为27以上，因此，将内部build.gradle的相关项都改为版本27的**
+
+##

@@ -10,11 +10,13 @@ import com.vivi.renew.app.R;
 import com.vivi.renew.app.base.BaseActivity;
 import com.vivi.renew.app.test.activity.TestGlideActivity;
 import com.vivi.renew.app.test.activity.TestOkHttpActivity;
+import com.vivi.renew.app.test.activity.TestUploadActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private Button button1;
     private Button button2;
+    private Button button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         // glide test
         button2 = (Button)findViewById(R.id.button_2);
         button2.setOnClickListener(this);
+
+        // upload test
+        button3 = (Button)findViewById(R.id.button_3);
+        button3.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +45,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             }
             case R.id.button_2: {
                 Intent intent = new Intent(this, TestGlideActivity.class);
+                this.startActivity(intent);
+            }
+            case R.id.button_3: {
+                Intent intent = new Intent(this, TestUploadActivity.class);
                 this.startActivity(intent);
             }
 
