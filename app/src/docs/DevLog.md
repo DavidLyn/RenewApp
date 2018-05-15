@@ -97,4 +97,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 **注意：glide4.6.1要求sdk版本为27以上，因此，将内部build.gradle的相关项都改为版本27的**
 
-##
+## 20180515
+
+### 增加对Butterknife的支持
+[Android Butterknife（黄油刀） 使用方法总结](https://blog.csdn.net/donkor_/article/details/77879630)
+**Butterknife的最新版本与android Studio3.0有冲突，可参照下述内容**
+[参考链接](https://blog.csdn.net/p576518762/article/details/78356137)
+
