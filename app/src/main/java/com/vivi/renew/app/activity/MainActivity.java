@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.vivi.renew.app.R;
 import com.vivi.renew.app.base.BaseActivity;
+import com.vivi.renew.app.test.activity.TestAlbumActivity;
 import com.vivi.renew.app.test.activity.TestGlideActivity;
 import com.vivi.renew.app.test.activity.TestOkHttpActivity;
 import com.vivi.renew.app.test.activity.TestUploadActivity;
@@ -17,6 +18,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private Button button1;
     private Button button2;
     private Button button3;
+    private Button button4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         // upload test
         button3 = (Button)findViewById(R.id.button_3);
         button3.setOnClickListener(this);
+
+        // album test
+        button4 = (Button)findViewById(R.id.button_4);
+        button4.setOnClickListener(this);
+
     }
 
     @Override
@@ -49,6 +56,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             }
             case R.id.button_3: {
                 Intent intent = new Intent(this, TestUploadActivity.class);
+                this.startActivity(intent);
+            }
+            case R.id.button_4: {
+                Intent intent = new Intent(this, TestAlbumActivity.class);
                 this.startActivity(intent);
             }
 
