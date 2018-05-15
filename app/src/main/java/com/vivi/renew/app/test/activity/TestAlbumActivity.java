@@ -1,5 +1,10 @@
 package com.vivi.renew.app.test.activity;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +18,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class TestAlbumActivity extends AppCompatActivity {
+
+    public static final int CHOOSE_PHOTO =2;
 
     @BindView(R.id.choose_from_album)
     Button chooseButton;
@@ -29,6 +36,18 @@ public class TestAlbumActivity extends AppCompatActivity {
 
     @OnClick(R.id.choose_from_album)
     public void onClicked(View view) {
-        this.finish();
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+        } else {
+            //openAlbum();
+        }
+
+        //this.finish();
+    }
+
+    private void openAlbum() {
+        Intent intent = new Intent("android.intent.action.GET_CONTENT");
+        intent.setType("image/*");
+        startActivityForResult(intent,CHOOSE_PHOTO);
     }
 }
