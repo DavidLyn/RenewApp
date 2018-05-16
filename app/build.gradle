@@ -47,4 +47,9 @@ dependencies {
     implementation 'com.orhanobut:logger:2.2.0'   // support for logger
 
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'  // support for retrofit
+
+    compile 'org.greenrobot:eventbus:3.1.1'    // support for eventBus
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'  // support for RxAndroid
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.14-RC1'    // support for RxJava
 }

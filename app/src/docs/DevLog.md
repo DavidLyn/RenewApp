@@ -112,3 +112,12 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ### 增加对retrofit2.4.0的支持
 [github](https://github.com/square/retrofit)
 [这是一份很详细的 Retrofit 2.0 使用教程（含实例讲解）](https://blog.csdn.net/carson_ho/article/details/73732076)
+
+### 增加对eventbus:3.1.1的支持
+[github](https://github.com/greenrobot/EventBus)
+
+### 增加对RxJava2.1.14-RC1的支持
+[github](https://github.com/ReactiveX/RxJava)
+
+### 增加对RxAndroid2.0.2的支持
+[github](https://github.com/ReactiveX/RxAndroid)
