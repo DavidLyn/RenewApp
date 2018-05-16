@@ -11,9 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.orhanobut.logger.Logger;
 import com.vivi.renew.app.R;
 import com.vivi.renew.app.activity.MainActivity;
-import com.vivi.renew.app.utils.LogUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -70,12 +70,14 @@ public class TestUploadActivity extends AppCompatActivity implements View.OnClic
                     .execute(new StringCallback(){
                         @Override
                         public void onError(Call call, Exception e, int id) {
-                            LogUtil.d("error",e.getMessage());
+//                            LogUtil.d("error",e.getMessage());
+                            Logger.d("error"+ e.getMessage());
                         }
 
                         @Override
                         public void onResponse(String response, int id) {
-                            LogUtil.d("tag","response = " + response);
+//                            LogUtil.d("tag","response = " + response);
+                            Logger.d("response = " + response);
 
                         }
                     });

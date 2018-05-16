@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.orhanobut.logger.Logger;
 import com.vivi.renew.app.R;
 import com.vivi.renew.app.base.CommonResult;
 import com.vivi.renew.app.test.Test;
-import com.vivi.renew.app.utils.LogUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -84,7 +84,8 @@ public class TestOkHttpActivity extends AppCompatActivity implements View.OnClic
                 .execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                LogUtil.d("EEEEEEEEEEEEEEEEEError:",e.toString());
+//                LogUtil.d("EEEEEEEEEEEEEEEEEError:",e.toString());
+                Logger.d("EEEEEEEEEEEEEEEEEError:" + e.toString());
             }
 
             @Override
@@ -94,7 +95,7 @@ public class TestOkHttpActivity extends AppCompatActivity implements View.OnClic
                 CommonResult<Test> result = new Gson().fromJson(response,jsonType);
 
                 textView.setText(result.getData().getUserName());
-                LogUtil.d("tag","" + result.getData().getBooks().size());
+//                LogUtil.d("tag","" + result.getData().getBooks().size());
             }
         });
     }
@@ -116,7 +117,8 @@ public class TestOkHttpActivity extends AppCompatActivity implements View.OnClic
 
                     @Override
                     public void onResponse(String response, int id) {
-                        LogUtil.d("response = ",response);
+//                        LogUtil.d("response = ",response);
+                        Logger.d("response = "+response);
                     }
                 });
     }
@@ -149,7 +151,7 @@ public class TestOkHttpActivity extends AppCompatActivity implements View.OnClic
 
                     @Override
                     public void onResponse(String response, int id) {
-                        LogUtil.d("response = ",response);
+                        //LogUtil.d("response = ",response);
                     }
                 });
 

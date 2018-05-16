@@ -104,3 +104,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 **Butterknife的最新版本与android Studio3.0有冲突，可参照下述内容**
 [参考链接](https://blog.csdn.net/p576518762/article/details/78356137)
 
+### 增加对logger的支持
+[参考链接](https://github.com/orhanobut/logger)
+
