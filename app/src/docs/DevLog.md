@@ -104,6 +104,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 **Butterknife的最新版本与android Studio3.0有冲突，可参照下述内容**
 [参考链接](https://blog.csdn.net/p576518762/article/details/78356137)
 
+## 20180516
+
 ### 增加对logger的支持
 [参考链接](https://github.com/orhanobut/logger)
 
+### 增加对retrofit2.4.0的支持
+[github](https://github.com/square/retrofit)
+[这是一份很详细的 Retrofit 2.0 使用教程（含实例讲解）](https://blog.csdn.net/carson_ho/article/details/73732076)

@@ -45,4 +45,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'   // support for ButterKnife
 
     implementation 'com.orhanobut:logger:2.2.0'   // support for logger
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'  // support for retrofit
 }
