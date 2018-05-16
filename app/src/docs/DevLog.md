@@ -113,6 +113,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 [github](https://github.com/square/retrofit)
 [这是一份很详细的 Retrofit 2.0 使用教程（含实例讲解）](https://blog.csdn.net/carson_ho/article/details/73732076)
 
+### 增加依赖：compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+**retrofit需要**
+
 ### 增加对eventbus:3.1.1的支持
 [github](https://github.com/greenrobot/EventBus)
 

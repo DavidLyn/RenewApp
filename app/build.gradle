@@ -47,6 +47,7 @@ dependencies {
     implementation 'com.orhanobut:logger:2.2.0'   // support for logger
 
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'  // support for retrofit
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'  // support for retrofit
 
     compile 'org.greenrobot:eventbus:3.1.1'    // support for eventBus
 
