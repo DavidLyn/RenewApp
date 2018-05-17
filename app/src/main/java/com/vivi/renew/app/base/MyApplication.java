@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 import com.vivi.renew.app.entity.DaoMaster;
 import com.vivi.renew.app.entity.DaoSession;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -54,6 +56,9 @@ public class MyApplication extends Application {
                 //.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager)
                 .build();
         OkHttpUtils.initClient(okHttpClient);
+
+        // 初始化日志
+        Logger.addLogAdapter(new AndroidLogAdapter());
 
     }
 
