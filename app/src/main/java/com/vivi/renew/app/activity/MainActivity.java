@@ -49,18 +49,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.button_1: {
                 Intent intent = new Intent(this, TestOkHttpActivity.class);
                 this.startActivity(intent);
+                break;
             }
             case R.id.button_2: {
                 Intent intent = new Intent(this, TestGlideActivity.class);
                 this.startActivity(intent);
+                break;
             }
             case R.id.button_3: {
                 Intent intent = new Intent(this, TestUploadActivity.class);
                 this.startActivity(intent);
+                break;
             }
             case R.id.button_4: {
                 Intent intent = new Intent(this, TestAlbumActivity.class);
                 this.startActivity(intent);
+                break;
             }
 
         }
