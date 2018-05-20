@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.vivi.renew.app.R;
+import com.vivi.renew.app.base.CommonResult;
 import com.vivi.renew.app.test.http.IRetrofitTest;
 import com.vivi.renew.app.test.model.Result;
 
@@ -53,6 +54,9 @@ public class TestAlbumActivity extends AppCompatActivity {
 
     @BindView(R.id.choose_from_album)
     Button chooseButton;
+
+    @BindView(R.id.test_generic)
+    Button genericBtn;
 
     @BindView(R.id.picture)
     ImageView picture;
@@ -89,10 +93,33 @@ public class TestAlbumActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.choose_from_album)
-    public void onClicked(View view) {
+    @OnClick(R.id.test_generic)
+    public void onClickedOnTestGeneric(View view) {
         Logger.d("i'm clicked!");
 
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.1.105:8080/renew/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        IRetrofitTest request = retrofit.create(IRetrofitTest.class);
+
+        Call<CommonResult<String>> call = request.testGenericResult();
+
+        call.enqueue(new Callback<CommonResult<String>>() {
+            @Override
+            public void onResponse(Call<CommonResult<String>> call, Response<CommonResult<String>> response) {
+                Toast.makeText(TestAlbumActivity.this,response.body().getData(),Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<CommonResult<String>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    @OnClick(R.id.choose_from_album)
+    public void onClicked(View view) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
         } else {

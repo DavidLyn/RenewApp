@@ -124,3 +124,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ### 增加对RxAndroid2.0.2的支持
 [github](https://github.com/ReactiveX/RxAndroid)
+
+## 20180519
+
+### 在TestAlbumActivity中增加单文件和多文件上传测试，使用retrofit

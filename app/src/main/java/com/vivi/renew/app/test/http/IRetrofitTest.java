@@ -1,5 +1,6 @@
 package com.vivi.renew.app.test.http;
 
+import com.vivi.renew.app.base.CommonResult;
 import com.vivi.renew.app.test.model.Result;
 
 import java.util.List;
@@ -18,6 +19,8 @@ import retrofit2.http.Part;
  */
 
 public interface IRetrofitTest {
+
+    // retrofit基本测试
     @GET("retrofitTest")
     Call<Result> getResult();
 
@@ -32,5 +35,9 @@ public interface IRetrofitTest {
     @Multipart
     @POST("testUploads")
     Call<ResponseBody> uploads(@Part() List<MultipartBody.Part> parts);
+
+    // 范型返回值测试
+    @GET("retrofitTest")
+    Call<CommonResult<String>> testGenericResult();
 
 }
