@@ -35,6 +35,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import io.reactivex.subjects.Subject;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -43,7 +48,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class TestAlbumActivity extends AppCompatActivity {
 
@@ -57,6 +64,9 @@ public class TestAlbumActivity extends AppCompatActivity {
 
     @BindView(R.id.test_generic)
     Button genericBtn;
+
+    @BindView(R.id.btn_test_rxjava)
+    Button testRxJavaBtn;
 
     @BindView(R.id.picture)
     ImageView picture;
@@ -116,6 +126,74 @@ public class TestAlbumActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @OnClick(R.id.btn_test_rxjava)
+    public void onClickTestRxJavaBtn(View view) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.1.105:8080/renew/")
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())  // RxJava2CallAdapterFactory
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        IRetrofitTest request = retrofit.create(IRetrofitTest.class);
+
+        request.getRxJavaResult()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Result>(){     // Observer
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Logger.d("getRxJavaResult onSubscribe");
+                    }
+
+                    @Override
+                    public void onNext(Result result) {
+                        Logger.d("result=" + result.getData());
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Logger.d("getRxJavaResult onError");
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Logger.d("getRxJavaResult onComplete");
+
+                    }
+                });
+
+        request.testRxJava()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<CommonResult<String>>(){
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Logger.d("testRxJava onSubscribe");
+
+                    }
+
+                    @Override
+                    public void onNext(CommonResult<String> stringCommonResult) {
+                        Logger.d("stringCommonResult=" + stringCommonResult.getData());
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Logger.d("testRxJava onError");
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Logger.d("testRxJava onComplete");
+
+                    }
+                });
+
     }
 
     @OnClick(R.id.choose_from_album)

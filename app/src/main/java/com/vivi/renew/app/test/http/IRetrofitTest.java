@@ -5,6 +5,7 @@ import com.vivi.renew.app.test.model.Result;
 
 import java.util.List;
 
+import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -39,5 +40,12 @@ public interface IRetrofitTest {
     // 范型返回值测试
     @GET("retrofitTest")
     Call<CommonResult<String>> testGenericResult();
+
+    // RxJava方式
+    @GET("retrofitTest")
+    Observable<CommonResult<String>> testRxJava();
+
+    @GET("retrofitTest")
+    Observable<Result> getRxJavaResult();
 
 }

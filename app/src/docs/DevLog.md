@@ -128,3 +128,17 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ## 20180519
 
 ### 在TestAlbumActivity中增加单文件和多文件上传测试，使用retrofit
+
+## 20180520
+
+### 在TestAlbumActivity中增加对范型返回值的测试
+
+## 20180521
+
++ [Retrofit用法详解](http://duanyytop.github.io/2016/08/06/Retrofit用法详解/)
+
++ [Retrofit + RxJava ＋ OkHttp 让网络请求变的简单-基础篇](https://www.jianshu.com/p/5bc866b9cbb9)
+
++ [Retrofit + RxJava ＋ OkHttp 让网络请求变的简单-封装篇](https://www.jianshu.com/p/811ba49d0748)
+
+**注意：上述资料中部分内容有误，正确写法参见app build.gradle,以及TestAlbumActivity中的写法**

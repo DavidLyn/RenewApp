@@ -53,4 +53,6 @@ dependencies {
 
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'  // support for RxAndroid
     implementation 'io.reactivex.rxjava2:rxjava:2.1.14-RC1'    // support for RxJava
+    //compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'//配合Rxjava 使用  －－－－ 这个不能用
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0' //配合Rxjava 使用
 }
