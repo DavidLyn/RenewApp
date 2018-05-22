@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.orhanobut.logger.Logger;
 import com.vivi.renew.app.R;
 import com.vivi.renew.app.base.BaseActivity;
+import com.vivi.renew.app.test.activity.EventBusFirstActivity;
 import com.vivi.renew.app.test.activity.TestAlbumActivity;
 import com.vivi.renew.app.test.activity.TestGlideActivity;
 import com.vivi.renew.app.test.activity.TestOkHttpActivity;
@@ -19,6 +21,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private Button button2;
     private Button button3;
     private Button button4;
+    private Button testEventBusBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         button4 = (Button)findViewById(R.id.button_4);
         button4.setOnClickListener(this);
 
+        // eventbus test
+        testEventBusBtn = (Button)findViewById(R.id.btn_test_eventbus);
+        testEventBusBtn.setOnClickListener(this);
     }
 
     @Override
@@ -63,6 +69,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             }
             case R.id.button_4: {
                 Intent intent = new Intent(this, TestAlbumActivity.class);
+                this.startActivity(intent);
+                break;
+            }
+            case R.id.btn_test_eventbus: {
+                Intent intent = new Intent(this, EventBusFirstActivity.class);
                 this.startActivity(intent);
                 break;
             }

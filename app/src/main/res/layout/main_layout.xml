@@ -27,4 +27,10 @@
         android:layout_height="wrap_content"
         android:text="Album-retrofit-upload-Test"/>
 
+    <Button
+        android:id="@+id/btn_test_eventbus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EventBus 测试"/>
+
 </LinearLayout>

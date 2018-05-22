@@ -27,7 +27,9 @@
         <activity android:name=".test.activity.TestGlideActivity" />
         <activity android:name=".test.activity.TestUploadActivity" />
         <activity android:name=".test.activity.TestAlbumActivity" />
-        <activity android:name=".test.activity.TestLayoutActivity"></activity>
+        <activity android:name=".test.activity.TestLayoutActivity" />
+        <activity android:name=".test.activity.EventBusFirstActivity" />
+        <activity android:name=".test.activity.EventBusSecondActivity"></activity>
     </application>
 
 </manifest>

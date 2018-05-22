@@ -142,3 +142,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 + [Retrofit + RxJava ＋ OkHttp 让网络请求变的简单-封装篇](https://www.jianshu.com/p/811ba49d0748)
 
 **注意：上述资料中部分内容有误，正确写法参见app build.gradle,以及TestAlbumActivity中的写法**
+
+## 20180522
+
+### 增加EventBus测试
++ [EventBus 3.0初探: 入门使用及其使用 完全解析](https://www.jianshu.com/p/acfe78296bb5)
